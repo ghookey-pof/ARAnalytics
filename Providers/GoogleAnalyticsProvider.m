@@ -32,7 +32,10 @@
 }
 
 - (void)event:(NSString *)event withProperties:(NSDictionary *)properties {
-    [[[GAI sharedInstance] defaultTracker] sendEventWithCategory:nil withAction:event withLabel:nil withValue:nil];
+    [[[GAI sharedInstance] defaultTracker] sendEventWithCategory:[properties valueForKey:@"category"]
+                                                      withAction:[properties valueForKey:@"event"]
+                                                       withLabel:[properties valueForKey:@"label"]
+                                                       withValue:[properties valueForKey:@"value"]];
 }
 
 - (void)didShowNewPageView:(NSString *)pageTitle {
