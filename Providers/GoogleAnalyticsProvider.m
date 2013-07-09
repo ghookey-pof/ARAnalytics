@@ -33,7 +33,7 @@
 
 - (void)event:(NSString *)event withProperties:(NSDictionary *)properties {
     [[[GAI sharedInstance] defaultTracker] sendEventWithCategory:[properties valueForKey:@"category"]
-                                                      withAction:[properties valueForKey:@"event"]
+                                                      withAction:[properties valueForKey:@"action"]
                                                        withLabel:[properties valueForKey:@"label"]
                                                        withValue:[properties valueForKey:@"value"]];
 }
